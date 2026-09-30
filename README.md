@@ -1,40 +1,49 @@
-# AI Chatbot
+# AI Study Assistant
 
-An AI-powered conversational chatbot developed using Python and a Large Language Model (LLM) API. The application provides a simple chat interface where users can enter questions and receive AI-generated responses.
+An interactive AI-powered study assistant built with **Python, Streamlit, and Google Gemini** to help users learn and practice topics related to Python, Machine Learning, Artificial Intelligence, RAG, and Data Science.
 
 ## Project Overview
 
-The purpose of this project is to demonstrate how a Large Language Model can be integrated into a Python application to build an interactive AI assistant.
+AI Study Assistant provides a simple conversational interface where users can ask technical questions and receive AI-generated explanations.
 
-The basic workflow is:
-
-```text
-User Input
-    ↓
-Chat Interface
-    ↓
-Prompt
-    ↓
-LLM API
-    ↓
-AI Response
-    ↓
-Display Response
-```
+The application uses **Gemini 2.5 Flash** as the Large Language Model (LLM) and Streamlit for the user interface.
 
 ## Features
 
-- Interactive chatbot interface
-- Accepts natural-language user queries
-- Generates AI-powered responses
-- Python-based LLM integration
-- Simple modular application structure
+- Interactive chat interface
+- AI-powered question answering
+- Conversation history during the session
+- Gemini 2.5 Flash integration
+- Streamlit-based web interface
+- Focused on:
+  - Python
+  - Machine Learning
+  - Artificial Intelligence
+  - RAG (Retrieval-Augmented Generation)
+  - Data Science
+
+## Application Workflow
+
+```text
+User Question
+      ↓
+Streamlit Chat Interface
+      ↓
+Prompt Processing
+      ↓
+Gemini 2.5 Flash
+      ↓
+AI-Generated Response
+      ↓
+Display Response
+```
 
 ## Technologies Used
 
 - Python
 - Streamlit
-- Large Language Model API
+- Google Gemini API
+- Google Gen AI SDK (`google-genai`)
 - python-dotenv
 
 ## Project Structure
@@ -43,12 +52,13 @@ Display Response
 ai-chatbot/
 │
 ├── app.py
-├── ai_service.py
 ├── README.md
 ├── requirements.txt
 ├── .gitignore
 └── .env.example
 ```
+
+The actual `.env` file containing the API key is excluded from GitHub using `.gitignore`.
 
 ## Installation
 
@@ -58,60 +68,74 @@ Clone the repository:
 git clone https://github.com/rprasad753-dot/ai-chatbot.git
 ```
 
-Move into the project directory:
+Navigate to the project:
 
 ```bash
 cd ai-chatbot
 ```
 
-Install the required packages:
+Create a virtual environment:
+
+```bash
+python -m venv venv
+```
+
+Activate it on Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+Install the dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Environment Variables
+## Environment Setup
 
-Create a `.env` file in the project directory and add the API key required by your LLM provider.
-
-Example:
+Create a `.env` file in the project directory:
 
 ```text
-API_KEY=your_api_key_here
+GEMINI_API_KEY=your_api_key_here
 ```
 
-Do not commit your real `.env` file or API key to GitHub.
+Never upload your real API key to GitHub.
 
 ## Run the Application
 
-If the interface is built with Streamlit:
+Start the Streamlit application:
 
 ```bash
 streamlit run app.py
 ```
 
-Open the local URL shown by Streamlit in your browser.
+Then open the local URL displayed by Streamlit, typically:
 
-## How It Works
+```text
+http://localhost:8501
+```
 
-1. The user enters a message through the chatbot interface.
-2. The application receives the user input.
-3. The input is passed to the LLM service.
-4. The LLM generates a response.
-5. The generated response is returned to the application.
-6. The response is displayed to the user.
+## Requirements
 
-## Learning Outcomes
+The main dependencies are:
 
-This project provided practical experience with:
+```text
+streamlit
+google-genai
+python-dotenv
+```
 
-- Large Language Models
-- LLM API integration
-- Prompt handling
-- Python application development
-- Streamlit
-- Environment-variable management
-- Building an end-to-end AI application
+## What I Learned
+
+Through this project, I gained hands-on experience with:
+
+- Integrating an LLM API with Python
+- Working with the Google Gen AI SDK
+- Building conversational AI applications
+- Managing chat interactions with Streamlit
+- Handling API keys securely using environment variables
+- Building a simple end-to-end Generative AI application
 
 ## Author
 
